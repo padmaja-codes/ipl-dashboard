@@ -2,7 +2,6 @@
 .team-item {
   list-style: none;
   width: 48%;
-  
 }
 
 .link-item {
@@ -19,7 +18,9 @@
   border-radius: 12px;
   padding: 16px 20px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .team-card-item:hover {

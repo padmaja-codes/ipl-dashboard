@@ -17,6 +17,7 @@ class Home extends Component {
 
   getTeams = async () => {
     try {
+      this.setState({isLoading: true})
       const response = await fetch(teamsApiUrl)
       const fetchedData = await response.json()
       const formattedData = fetchedData.teams.map(team => ({
@@ -24,12 +25,10 @@ class Home extends Component {
         id: team.id,
         teamImageURL: team.team_image_url,
       }))
-      setTimeout(() => {
-        this.setState({
-          teamsData: formattedData,
-          isLoading: false,
-        })
-      }, 300)
+      this.setState({
+        teamsData: formattedData,
+        isLoading: false,
+      })
     } catch (error) {
       console.error('Error fetching teams:', error)
     }
